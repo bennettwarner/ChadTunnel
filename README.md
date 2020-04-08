@@ -4,9 +4,6 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/b\_e\_n" target="_blank">
-    <img alt="Twitter: b\_e\_n" src="https://img.shields.io/twitter/follow/b\_e\_n.svg?style=social" />
-  </a>
 </p>
 
 ## Install
@@ -26,8 +23,12 @@ go run main.go
 👤 **Bennett Warner**
 
 * Website: http://bennettwarner.com
-* Twitter: [@b\_e\_n](https://twitter.com/b\_e\_n)
+* Twitter: [@b_e_n](https://twitter.com/b_e_n)
 * Github: [@bennettwarner](https://github.com/bennettwarner)
+
+👤 **tnkr**
+
+* Github: [@tnkr](https://github.com/tnkr)
 
 ## 🤝 Contributing
 
