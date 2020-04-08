@@ -22,7 +22,7 @@ go run main.go
 
 👤 **Bennett Warner**
 
-* Website: http://bennettwarner.com
+* Website: https://bennettwarner.com
 * Twitter: [@b_e_n](https://twitter.com/b_e_n)
 * Github: [@bennettwarner](https://github.com/bennettwarner)
 
