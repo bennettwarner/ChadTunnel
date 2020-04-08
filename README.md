@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to ChadTunnel 👋</h1>
+<h1 align="center">Welcome to ChadTunnel :hurtrealbad:</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-2004-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -20,13 +20,12 @@ go run main.go
 
 ## Author
 
-👤 **Bennett Warner**
+😝 **Bennett Warner**
 
-* Website: https://bennettwarner.com
 * Twitter: [@b_e_n](https://twitter.com/b_e_n)
 * Github: [@bennettwarner](https://github.com/bennettwarner)
 
-👤 **tnkr**
+😡 **tnkr**
 
 * Github: [@tnkr](https://github.com/tnkr)
 
