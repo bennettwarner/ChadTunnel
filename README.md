@@ -31,7 +31,7 @@ Binaries are provided for Windows but untested...
 
 😡 **Zach Lawson**
 
-* Twitter: [@_tnkr_](https://twitter.com/_tnkr_)
+* Twitter: [@tnkr](https://twitter.com/_tnkr_)
 * Github: [@tnkr](https://github.com/tnkr)
 
 ## 🤝 Contributing
