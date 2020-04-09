@@ -31,6 +31,7 @@ Binaries are provided for Windows but untested...
 
 😡 **tnkr**
 
+* Twitter: [@_tnkr_](https://twitter.com/_tnkr_)
 * Github: [@tnkr](https://github.com/tnkr)
 
 ## 🤝 Contributing
