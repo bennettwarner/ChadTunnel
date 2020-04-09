@@ -12,6 +12,8 @@
 go get https://github.com/bennettwarner/ChadTunnel
 ```
 
+Or download and run the pre-compiled binaries.
+
 ## Usage
 
 ```sh
