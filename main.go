@@ -40,6 +40,7 @@ func execInput(input string) error {
 	cmd := exec.Command(args[0], args[1:]...)
 
 	// Set the correct output device.
+	cmd.Stdin  = os.Stdin
 	cmd.Stderr = os.Stderr
 	cmd.Stdout = os.Stdout
 
@@ -181,7 +182,7 @@ func proxy() {
 
 		fmt.Println("\nIn the future you can save time and launch the command directly:")
 		color.Magenta("    " + command)
-		//execInput(command)
+		execInput(command)
 	} else {
 		rhost_ip := ""
 		prompt1 := &survey.Input{
@@ -247,6 +248,315 @@ func proxy() {
 	}
 }
 
+func portForward() {
+	localUser, err := user.Current()
+	if err != nil {
+		panic(err)
+	}
+	port, err := freeport.GetFreePort()
+	if err != nil {
+		log.Fatal(err)
+	}
+	jumpbox := false
+	prompt := &survey.Confirm{
+		Message: "Do you want to connect to this remote host via a jumpbox?",
+	}
+	err1 := survey.AskOne(prompt, &jumpbox)
+	if err1 == terminal.InterruptErr {
+		fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+		os.Exit(0)
+	} else if err1 != nil {
+		panic(err1)
+	}
+	if jumpbox{
+		jumpbox_ip := ""
+		prompt1 := &survey.Input{
+			Message: "Jumpbox IP/Hostname:",
+		}
+		err := survey.AskOne(prompt1, &jumpbox_ip, survey.WithValidator(survey.Required))
+		if err == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err != nil {
+			panic(err)
+		}
+
+		jumpbox_port := ""
+		prompt6 := &survey.Input{
+			Message: "Jumpbox SSH Port:",
+			Default: "22",
+		}
+		err2 := survey.AskOne(prompt6, &jumpbox_port, survey.WithValidator(survey.Required))
+		if err2 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err2 != nil {
+			panic(err2)
+		}
+
+		jumpbox_username := ""
+		prompt2 := &survey.Input{
+			Message: "Jumpbox Username:",
+			Default: localUser.Username,
+		}
+		err3 := survey.AskOne(prompt2, &jumpbox_username, survey.WithValidator(survey.Required))
+		if err3 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err3 != nil {
+			panic(err3)
+		}
+
+		pivot_ip := ""
+		prompt3 := &survey.Input{
+			Message: "Pivot Host IP/Hostname:",
+		}
+		err4 := survey.AskOne(prompt3, &pivot_ip, survey.WithValidator(survey.Required))
+		if err4 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err4 != nil {
+			panic(err4)
+		}
+
+		pivot_port := ""
+		prompt5 := &survey.Input{
+			Message: "Pivot Host SSH Port:",
+			Default: "22",
+		}
+		err5 := survey.AskOne(prompt5, &pivot_port, survey.WithValidator(survey.Required))
+		if err5 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err5 != nil {
+			panic(err5)
+		}
+
+		pivot_username := ""
+		prompt4 := &survey.Input{
+			Message: "Pivot Host Username:",
+			Default: localUser.Username,
+		}
+		err6 := survey.AskOne(prompt4, &pivot_username, survey.WithValidator(survey.Required))
+		if err6 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err6 != nil {
+			panic(err6)
+		}
+
+		rhost_ip := ""
+		prompt7 := &survey.Input{
+			Message: "Remote Host IP/Hostname:",
+		}
+		err7 := survey.AskOne(prompt7, &rhost_ip, survey.WithValidator(survey.Required))
+		if err7 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+			os.Exit(0)
+		} else if err7 != nil {
+			panic(err7)
+		}
+
+		rhost_port := ""
+		prompt8 := &survey.Input{
+			Message: "Remote Host Port:",
+		}
+		err8 := survey.AskOne(prompt8, &rhost_port, survey.WithValidator(survey.Required))
+		if err8 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+			os.Exit(0)
+		} else if err8 != nil {
+			panic(err8)
+		}
+
+		command := "ssh -L " + strconv.Itoa(port) + ":" + rhost_ip + ":" + rhost_port + " -N -J " + jumpbox_username + "@" + jumpbox_ip + ":" + jumpbox_port + " " + pivot_username + "@" + pivot_ip + " -p " + pivot_port
+		color.Green("\n[+] Launching SSH Port Forwarding...")
+		fmt.Println("    You can now access the remote service at localhost:" + strconv.Itoa(port))
+		fmt.Println("    Press Ctrl + C to exit")
+
+		fmt.Println("\nIn the future you can save time and launch the command directly:")
+		color.Magenta("    " + command)
+		execInput(command)
+	} else {
+		pivot_ip := ""
+		prompt3 := &survey.Input{
+			Message: "Pivot Host IP/Hostname:",
+		}
+		err4 := survey.AskOne(prompt3, &pivot_ip, survey.WithValidator(survey.Required))
+		if err4 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err4 != nil {
+			panic(err4)
+		}
+
+		pivot_port := ""
+		prompt5 := &survey.Input{
+			Message: "Pivot Host SSH Port:",
+			Default: "22",
+		}
+		err5 := survey.AskOne(prompt5, &pivot_port, survey.WithValidator(survey.Required))
+		if err5 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err5 != nil {
+			panic(err5)
+		}
+
+		pivot_username := ""
+		prompt4 := &survey.Input{
+			Message: "Pivot Host Username:",
+			Default: localUser.Username,
+		}
+		err6 := survey.AskOne(prompt4, &pivot_username, survey.WithValidator(survey.Required))
+		if err6 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+			os.Exit(0)
+		} else if err6 != nil {
+			panic(err6)
+		}
+
+		rhost_ip := ""
+		prompt7 := &survey.Input{
+			Message: "Remote Host IP/Hostname:",
+		}
+		err7 := survey.AskOne(prompt7, &rhost_ip, survey.WithValidator(survey.Required))
+		if err7 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+			os.Exit(0)
+		} else if err7 != nil {
+			panic(err7)
+		}
+
+		rhost_port := ""
+		prompt8 := &survey.Input{
+			Message: "Remote Host Port:",
+		}
+		err8 := survey.AskOne(prompt8, &rhost_port, survey.WithValidator(survey.Required))
+		if err8 == terminal.InterruptErr {
+			fmt.Println("\r- Ctrl+C pressed in Terminal")
+			os.Exit(0)
+		} else if err8 != nil {
+			panic(err8)
+		}
+
+		command := "ssh -L " + strconv.Itoa(port) + ":" + rhost_ip + ":" + rhost_port + " -N " + pivot_username + "@" + pivot_ip + " -p " + pivot_port
+		color.Green("\n[+] Launching SSH Port Forwarding...")
+		fmt.Println("    You can now access the remote service at localhost:" + strconv.Itoa(port))
+		fmt.Println("    Press Ctrl + C to exit")
+
+		fmt.Println("\nIn the future you can save time and launch the command directly:")
+		color.Magenta("    " + command)
+		execInput(command)
+	}
+}
+
+func ssh() {
+	localUser, err := user.Current()
+	if err != nil {
+		panic(err)
+	}
+
+	jumpbox_ip := ""
+	prompt1 := &survey.Input{
+		Message: "Jumpbox IP/Hostname:",
+	}
+	err8 := survey.AskOne(prompt1, &jumpbox_ip, survey.WithValidator(survey.Required))
+	if err8 == terminal.InterruptErr {
+		fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+		os.Exit(0)
+	} else if err8 != nil {
+		panic(err8)
+	}
+
+	jumpbox_port := ""
+	prompt6 := &survey.Input{
+		Message: "Jumpbox SSH Port:",
+		Default: "22",
+	}
+	err2 := survey.AskOne(prompt6, &jumpbox_port, survey.WithValidator(survey.Required))
+	if err2 == terminal.InterruptErr {
+		fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+		os.Exit(0)
+	} else if err2 != nil {
+		panic(err2)
+	}
+
+	jumpbox_username := ""
+	prompt2 := &survey.Input{
+		Message: "Jumpbox Username:",
+		Default: localUser.Username,
+	}
+	err3 := survey.AskOne(prompt2, &jumpbox_username, survey.WithValidator(survey.Required))
+	if err3 == terminal.InterruptErr {
+		fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+		os.Exit(0)
+	} else if err3 != nil {
+		panic(err3)
+	}
+
+	rhost_ip := ""
+	prompt3 := &survey.Input{
+		Message: "Remote Host IP/Hostname:",
+	}
+	err4 := survey.AskOne(prompt3, &rhost_ip, survey.WithValidator(survey.Required))
+	if err4 == terminal.InterruptErr {
+		fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+		os.Exit(0)
+	} else if err4 != nil {
+		panic(err4)
+	}
+
+	rhost_port := ""
+	prompt5 := &survey.Input{
+		Message: "Remote Host SSH Port:",
+		Default: "22",
+	}
+	err5 := survey.AskOne(prompt5, &rhost_port, survey.WithValidator(survey.Required))
+	if err5 == terminal.InterruptErr {
+		fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+		os.Exit(0)
+	} else if err5 != nil {
+		panic(err5)
+	}
+
+	rhost_username := ""
+	prompt4 := &survey.Input{
+		Message: "Remote Host Username:",
+		Default: localUser.Username,
+	}
+	err6 := survey.AskOne(prompt4, &rhost_username, survey.WithValidator(survey.Required))
+	if err6 == terminal.InterruptErr {
+		fmt.Println("\r- Ctrl+C pressed in Terminal")
+
+		os.Exit(0)
+	} else if err6 != nil {
+		panic(err6)
+	}
+
+	command := "ssh " + "-J " + jumpbox_username + "@" + jumpbox_ip + ":" + jumpbox_port + " " + rhost_username + "@" + rhost_ip + " -p " + rhost_port
+	color.Green("\n[+] Launching interactive SSH session on\n    " + rhost_ip + " via " + jumpbox_ip + "	\n")
+	fmt.Println("\n    Press Ctrl + C to exit")
+
+	fmt.Println("\nIn the future you can save time and launch the command directly:")
+	color.Magenta("    " + command)
+	execInput(command)
+}
 
 func main() {
 	SetupCloseHandler()
@@ -290,8 +600,8 @@ func main() {
 	case 0:
 		proxy()
 	case 1:
-		fmt.Printf("lol2")
+		portForward()
 	case 2:
-		fmt.Printf("lol3")
+		ssh()
 	}
 }
