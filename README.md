@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to ChadTunnel :hurtrealbad:</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-2004-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
+  <a href="https://github.com/bennettwarner/ChadTunnel/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </p>
@@ -12,11 +12,15 @@
 go get https://github.com/bennettwarner/ChadTunnel
 ```
 
+Or download and run the pre-compiled binaries.
+
 ## Usage
 
 ```sh
 go run main.go
 ```
+
+Binaries are provided for Windows but untested...
 
 ## Author
 
@@ -25,8 +29,9 @@ go run main.go
 * Twitter: [@b_e_n](https://twitter.com/b_e_n)
 * Github: [@bennettwarner](https://github.com/bennettwarner)
 
-😡 **tnkr**
+😡 **Zach Lawson**
 
+* Twitter: [@tnkr](https://twitter.com/_tnkr_)
 * Github: [@tnkr](https://github.com/tnkr)
 
 ## 🤝 Contributing
