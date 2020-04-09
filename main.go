@@ -560,7 +560,6 @@ func ssh() {
 
 func main() {
 	SetupCloseHandler()
-	// the answers will be written to this struct
 
 	title := `
                                             ,#####,
