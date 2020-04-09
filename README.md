@@ -29,7 +29,7 @@ Binaries are provided for Windows but untested...
 * Twitter: [@b_e_n](https://twitter.com/b_e_n)
 * Github: [@bennettwarner](https://github.com/bennettwarner)
 
-😡 **tnkr**
+😡 **Zach Lawson**
 
 * Twitter: [@_tnkr_](https://twitter.com/_tnkr_)
 * Github: [@tnkr](https://github.com/tnkr)
