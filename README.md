@@ -1,11 +1,8 @@
-<h1 align="center">Welcome to ChadTunnel 👋</h1>
+<h1 align="center">Welcome to ChadTunnel :hurtrealbad:</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-2004-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/b\_e\_n" target="_blank">
-    <img alt="Twitter: b\_e\_n" src="https://img.shields.io/twitter/follow/b\_e\_n.svg?style=social" />
   </a>
 </p>
 
@@ -23,11 +20,14 @@ go run main.go
 
 ## Author
 
-👤 **Bennett Warner**
+😝 **Bennett Warner**
 
-* Website: http://bennettwarner.com
-* Twitter: [@b\_e\_n](https://twitter.com/b\_e\_n)
+* Twitter: [@b_e_n](https://twitter.com/b_e_n)
 * Github: [@bennettwarner](https://github.com/bennettwarner)
+
+😡 **tnkr**
+
+* Github: [@tnkr](https://github.com/tnkr)
 
 ## 🤝 Contributing
 
