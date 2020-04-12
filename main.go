@@ -579,7 +579,7 @@ func main() {
    ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚══════╝
 `
 	color.Red(title)
-	color.Green("\tVersion 2003 | Written by @b_e_n & tnkr\n\n\n")
+	color.Green("\tVersion 2003 | Written by @b_e_n & @_tnkr_\n\n\n")
 
 	var mode int
 	prompt := &survey.Select{
