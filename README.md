@@ -8,6 +8,17 @@
 
 ![ChadTunnel Demo](demo.gif)
 
+## GETTING RIPPED ON SSH GAINS
+Needing that dynamic tunnel rush? Need some of that pure service over ssh?
+Ain't got time for that nerdy "kOmMaNd lInE Is fOr tRuE PoWeR UsErS" CRAP?
+Then you need this ChadTunnel, so F'in HARD!!!
+
+Seriously though, what does it do? 
+It simplifies creating ssh tunnels, specifically:
+1. Dynamic tunnels which pipe all info through a host
+2. Bring a remote service through a host
+3. Set up a tunnel that will traverse through an infinite number of jump boxes
+
 ## Install
 
 ```sh
