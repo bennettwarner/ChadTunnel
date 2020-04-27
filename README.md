@@ -6,6 +6,8 @@
   </a>
 </p>
 
+![ChadTunnel Demo](demo.gif)
+
 ## Install
 
 ```sh
