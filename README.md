@@ -6,7 +6,7 @@
   </a>
 </p>
 
-![ChadTunnel Demo](demo.gif | width=200)
+![ChadTunnel Demo](demo.gif)
 
 ## Install
 
