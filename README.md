@@ -14,10 +14,10 @@ Ain't got time for that nerdy "kOmMaNd lInE Is fOr tRuE PoWeR UsErS" CRAP?
 Then you need this ChadTunnel, so F'in HARD!!!
 
 Seriously though, what does it do? 
-It simplifies creating ssh tunnels, specifically:
-1. Dynamic tunnels which pipe all info through a host
-2. Bring a remote service through a host
-3. Set up a tunnel that will traverse through an infinite number of jump boxes
+It simplifies all the ssh commands that are hard to remember, specifically:
+1. Dynamic tunnels to proxy traffic through a host (and optionally a jumpbox)
+2. Forward ports from a remote service to a host (and optionally a jumpbox)
+3. Set up a SSH session that will traverse through a jump box
 
 ## Install
 
