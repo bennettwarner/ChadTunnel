@@ -10,8 +10,8 @@
 
 ## GETTING RIPPED ON SSH GAINS
 Needing that dynamic tunnel rush? Need some of that pure service over ssh?
-Ain't got time for that nerdy "kOmMaNd lInE Is fOr tRuE PoWeR UsErS" CRAP?
-Then you need this ChadTunnel, so F'in HARD!!!
+Ain't got time for that nerdy "kOmMaNd lInE?
+Then you need this ChadTunnel!!!
 
 Seriously though, what does it do? 
 It simplifies all the ssh commands that are hard to remember, specifically:
