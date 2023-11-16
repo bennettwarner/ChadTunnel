@@ -22,7 +22,7 @@ It simplifies all the ssh commands that are hard to remember, specifically:
 ## Install
 
 ```sh
-go get github.com/bennettwarner/ChadTunnel
+go install github.com/bennettwarner/ChadTunnel@latest
 ```
 
 Or download and run the pre-compiled binaries.
